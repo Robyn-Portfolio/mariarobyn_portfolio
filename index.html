@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maria Robel | Portfolio</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;900&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#E53935',
+            secondary: '#FDF2F2',
+            'accent-yellow': '#FFD54F',
+            'accent-orange': '#FF8A65',
+            'accent-red': '#D32F2F',
+            'timeline-line': '#FCE4EC',
+            background: '#FAFAFA',
+            foreground: '#1A1A1A',
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            paragraph: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .blob-shape {
+      border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+      animation: morph 8s ease-in-out infinite;
+    }
+
+    .blob-shape-2 {
+      border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
+      animation: morph2 10s ease-in-out infinite alternate;
+    }
+
+    @keyframes morph {
+
+      0%,
+      100% {
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+      }
+
+      34% {
+        border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+      }
+
+      67% {
+        border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+      }
+    }
+
+    @keyframes morph2 {
+
+      0%,
+      100% {
+        border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
+      }
+
+      50% {
+        border-radius: 30% 70% 70% 30% / 60% 40% 60% 40%;
+      }
+    }
+
+    .marquee-container {
+      display: flex;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+    }
+
+    .marquee-content {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: space-around;
+      min-width: 100%;
+      gap: 3rem;
+      animation: scroll 25s linear infinite;
+    }
+
+    @keyframes scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(calc(-100% - 3rem));
+      }
+    }
+
+    .custom-gradient-bg {
+      background: radial-gradient(circle at 10% 20%, rgba(253, 242, 242, 1) 0%, rgba(255, 255, 255, 1) 90%);
+    }
+
+    .hover-card-trigger:hover .card-animate-target {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 25px 50px -12px rgba(229, 57, 53, 0.15);
+    }
+  </style>
+</head>
+
+<body class="bg-background text-foreground selection:bg-accent-yellow selection:text-primary custom-gradient-bg">
+
+  <header class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl" data-aos="fade-down"
+    data-aos-duration="1000">
+    <nav
+      class="bg-primary/90 backdrop-blur-xl rounded-full px-6 py-3 shadow-[0_20px_40px_-15px_rgba(229,57,53,0.3)] border border-white/20 flex items-center justify-between transition-all duration-300 hover:border-white/40">
+      <div class="hidden md:flex gap-1">
+        <a href="#personal"
+          class="px-4 py-2 rounded-full text-sm font-medium text-white/90 hover:text-primary hover:bg-accent-yellow transition-all duration-300">Personal</a>
+        <a href="#education"
+          class="px-4 py-2 rounded-full text-sm font-medium text-white/90 hover:text-primary hover:bg-accent-yellow transition-all duration-300">Education</a>
+        <a href="#family"
+          class="px-4 py-2 rounded-full text-sm font-medium text-white/90 hover:text-primary hover:bg-accent-yellow transition-all duration-300">Family</a>
+        <a href="#interests"
+          class="px-4 py-2 rounded-full text-sm font-medium text-white/90 hover:text-primary hover:bg-accent-yellow transition-all duration-300">Interests</a>
+        <a href="#friends"
+          class="px-4 py-2 rounded-full text-sm font-medium text-white/90 hover:text-primary hover:bg-accent-yellow transition-all duration-300">Friends</a>
+        <a href="#achievements"
+          class="px-4 py-2 rounded-full text-sm font-medium text-white/90 hover:text-primary hover:bg-accent-yellow transition-all duration-300">Achievements</a>
+        <a href="#advocacy"
+          class="px-4 py-2 rounded-full text-sm font-medium text-white/90 hover:text-primary hover:bg-accent-yellow transition-all duration-300">Advocacy</a>
+      </div>
+      <a href="#personal"
+        class="md:hidden bg-accent-yellow text-primary p-2.5 rounded-full shadow-md hover:scale-105 active:scale-95 transition-transform">
+        <i data-lucide="smile" class="w-5 h-5"></i>
+      </a>
+    </nav>
+  </header>
+
+  <section id="personal"
+    class="relative w-full min-h-screen flex items-center justify-center pt-28 pb-16 px-6 overflow-hidden">
+    <div
+      class="absolute top-20 left-10 w-72 h-72 bg-secondary rounded-full mix-blend-multiply filter blur-3xl opacity-80 animate-pulse">
+    </div>
+    <div
+      class="absolute bottom-20 right-10 w-96 h-96 bg-accent-yellow rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse"
+      style="animation-delay: 2s;"></div>
+
+    <div class="max-w-6xl mx-auto w-full grid lg:grid-cols-12 gap-12 items-center relative z-10">
+      <div class="lg:col-span-7 text-center lg:text-left" data-aos="fade-right" data-aos-duration="1000">
+        <div
+          class="inline-flex items-center gap-2 bg-white text-primary border border-primary/10 px-4 py-2 rounded-full font-bold text-xs md:text-sm mb-6 shadow-[0_8px_20px_-6px_rgba(229,57,53,0.15)] hover:scale-105 transition-transform duration-300">
+          <i data-lucide="sparkles" class="w-4 h-4 text-accent-orange animate-spin" style="animation-duration: 4s;"></i>
+          <span>Everything you seek is within</span>
+        </div>
+        <h1
+          class="font-heading text-5xl md:text-7xl lg:text-8xl font-black text-primary leading-[0.95] mb-6 tracking-tight">
+          Maria Robyn <br />
+          <span class="text-accent-orange relative inline-block">Jhorisia</span> <br />
+          S. Robel
+        </h1>
+        <p class="text-lg md:text-2xl font-heading font-medium text-foreground/70 mb-10 tracking-wide">
+          BSITM <span class="text-primary font-bold">·</span> 2nd Year Student
+        </p>
+        <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+          <a href="tel:09260456760"
+            class="flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-accent-red transition-all duration-300 shadow-[0_10px_25px_-5px_rgba(229,57,53,0.4)] hover:-translate-y-1 active:translate-y-0">
+            <i data-lucide="phone" class="w-5 h-5"></i> 09260456760
+          </a>
+          <a href="mailto:robelrobyn@gmail.com"
+            class="flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-full font-bold border-2 border-primary/10 hover:border-primary transition-all duration-300 shadow-md hover:-translate-y-1 active:translate-y-0">
+            <i data-lucide="mail" class="w-5 h-5"></i> robelrobyn@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 flex justify-center items-center" data-aos="zoom-in" data-aos-duration="1200">
+        <div class="relative w-[280px] h-[370px] sm:w-[350px] sm:h-[480px] lg:w-[400px] lg:h-[530px]">
+          <div
+            class="absolute inset-0 bg-accent-orange blob-shape translate-x-6 translate-y-6 opacity-40 mix-blend-multiply">
+          </div>
+          <div
+            class="absolute inset-0 bg-primary blob-shape-2 -translate-x-6 -translate-y-6 opacity-20 mix-blend-multiply">
+          </div>
+          <div
+            class="absolute inset-0 blob-shape overflow-hidden border-4 border-white shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] z-10 bg-secondary group transition-transform duration-500 hover:scale-[1.02]">
+            <img src="p1 (1).jpg" alt="Maria Robel"
+              class="w-full h-full object-cover transform duration-700 group-hover:scale-110">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="w-full bg-primary/5 py-6 border-y border-primary/10 overflow-hidden mb-12">
+    <div class="marquee-container">
+      <div
+        class="marquee-content font-heading font-black text-xl md:text-2xl text-primary/30 uppercase tracking-widest">
+        <span>Creative Mind</span> <span>·</span> <span>Tourism Professional</span> <span>·</span> <span>Problem
+          Solver</span> <span>·</span> <span>Innovator</span> <span>·</span> <span>Leader</span> <span>·</span>
+      </div>
+      <div class="marquee-content font-heading font-black text-xl md:text-2xl text-primary/30 uppercase tracking-widest"
+        aria-hidden="true">
+        <span>Creative Mind</span> <span>·</span> <span>Tourism Professional</span> <span>·</span> <span>Problem
+          Solver</span> <span>·</span> <span>Innovator</span> <span>·</span> <span>Leader</span> <span>·</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="education" class="w-full py-24 relative bg-white overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 relative">
+      <div class="text-center mb-20" data-aos="fade-up">
+        <h2 class="font-heading text-4xl md:text-6xl font-black text-primary mb-4 tracking-tight">My Learning Journey
+        </h2>
+        <div class="w-24 h-1.5 bg-accent-orange mx-auto rounded-full"></div>
+      </div>
+
+      <div class="relative">
+        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-timeline-line"></div>
+
+        <div class="relative flex flex-col md:flex-row justify-end items-center mb-12 w-full hover-card-trigger"
+          data-aos="fade-left">
+          <div
+            class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-4 border-primary rounded-full z-10 transition-transform duration-300 group-hover:scale-150">
+          </div>
+          <div
+            class="w-full md:w-[46%] bg-white rounded-3xl p-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-gray-100 card-animate-target transition-all duration-300 relative">
+            <div class="flex justify-between items-start mb-4">
+              <span class="bg-primary/10 text-primary text-xs font-bold px-4 py-1.5 rounded-full">2024 - 2028</span>
+              <i data-lucide="graduation-cap" class="w-5 h-5 text-primary/40"></i>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-primary mb-1">College</h3>
+            <p class="font-bold text-gray-800 mb-1">LPU Manila</p>
+            <p class="text-accent-orange font-semibold text-sm uppercase tracking-wider">BSITM</p>
+          </div>
+        </div>
+
+        <div class="relative flex flex-col md:flex-row justify-start items-center mb-12 w-full hover-card-trigger"
+          data-aos="fade-right">
+          <div
+            class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-4 border-primary rounded-full z-10">
+          </div>
+          <div
+            class="w-full md:w-[46%] bg-white rounded-3xl p-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-gray-100 card-animate-target transition-all duration-300 relative">
+            <div class="flex justify-between items-start mb-4">
+              <span class="bg-primary/10 text-primary text-xs font-bold px-4 py-1.5 rounded-full">2022 - 2024</span>
+              <i data-lucide="book-open" class="w-5 h-5 text-primary/40"></i>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-primary mb-1">Senior High School</h3>
+            <p class="font-bold text-gray-800 mb-1">UST Angelicum College</p>
+            <p class="text-accent-orange font-semibold text-sm uppercase tracking-wider">STEM</p>
+          </div>
+        </div>
+
+        <div class="relative flex flex-col md:flex-row justify-end items-center mb-12 w-full hover-card-trigger"
+          data-aos="fade-left">
+          <div
+            class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-4 border-primary rounded-full z-10">
+          </div>
+          <div
+            class="w-full md:w-[46%] bg-white rounded-3xl p-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-gray-100 card-animate-target transition-all duration-300 relative">
+            <div class="flex justify-between items-start mb-4">
+              <span class="bg-primary/10 text-primary text-xs font-bold px-4 py-1.5 rounded-full">2018 - 2022</span>
+              <i data-lucide="award" class="w-5 h-5 text-primary/40"></i>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-primary mb-1">Junior High School</h3>
+            <p class="font-bold text-gray-800 mb-1">Villagers Montessori College</p>
+            <p class="text-accent-orange font-semibold text-sm uppercase tracking-wider">Grade 7 to Grade 10 Science</p>
+          </div>
+        </div>
+
+        <div class="relative flex flex-col md:flex-row justify-start items-center w-full hover-card-trigger"
+          data-aos="fade-right">
+          <div
+            class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-4 border-primary rounded-full z-10">
+          </div>
+          <div
+            class="w-full md:w-[46%] bg-white rounded-3xl p-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-gray-100 card-animate-target transition-all duration-300 relative">
+            <div class="flex justify-between items-start mb-4">
+              <span class="bg-primary/10 text-primary text-xs font-bold px-4 py-1.5 rounded-full">2012 - 2018</span>
+              <i data-lucide="bookmark" class="w-5 h-5 text-primary/40"></i>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-primary mb-1">Elementary School</h3>
+            <p class="font-bold text-gray-800 mb-1">Elyseum Christian School</p>
+            <p class="text-accent-orange font-semibold text-sm uppercase tracking-wider">Grade 1 to Grade 6</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="family" class="w-full py-24 relative bg-secondary/50 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 relative">
+      <div class="text-center mb-20" data-aos="fade-up">
+        <h2 class="font-heading text-4xl md:text-6xl font-black text-primary mb-4 tracking-tight">My Family</h2>
+        <div class="w-24 h-1.5 bg-accent-orange mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
+        <div
+          class="bg-white rounded-[2.5rem] p-6 shadow-[0_15px_35px_rgba(0,0,0,0.02)] border border-gray-100 flex flex-col items-center text-center group hover:shadow-[0_25px_50px_-12px_rgba(229,57,53,0.1)] transition-all duration-300 hover:-translate-y-2"
+          data-aos="fade-up" data-aos-delay="100">
+          <div class="relative w-36 h-36 mb-6 group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-accent-orange/20 rounded-full scale-110 animate-pulse"></div>
+            <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-md relative z-10">
+              <img src="p1 (5).jpg" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <h3 class="font-heading text-xl font-black text-foreground mb-1 leading-snug">Georgia & Alfredo Sarmiento</h3>
+          <p class="text-primary font-bold text-xs tracking-widest uppercase mb-4 font-heading">Grandparents</p>
+          <p class="text-foreground/60 text-sm leading-relaxed font-paragraph">Hardworking pillars of our home who have
+            always paved the way for my highest aspirations.</p>
+        </div>
+
+        <div
+          class="bg-white rounded-[2.5rem] p-6 shadow-[0_15px_35px_rgba(0,0,0,0.02)] border border-gray-100 flex flex-col items-center text-center group hover:shadow-[0_25px_50px_-12px_rgba(229,57,53,0.1)] transition-all duration-300 hover:-translate-y-2"
+          data-aos="fade-up" data-aos-delay="200">
+          <div class="relative w-36 h-36 mb-6 group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-accent-orange/20 rounded-full scale-110 animate-pulse"
+              style="animation-delay: 0.5s"></div>
+            <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-md relative z-10">
+              <img src="p1 (6).jpg" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <h3 class="font-heading text-xl font-black text-foreground mb-1 leading-snug">Robin & Mary Joy Robel</h3>
+          <p class="text-primary font-bold text-xs tracking-widest uppercase mb-4 font-heading">Parents</p>
+          <p class="text-foreground/60 text-sm leading-relaxed font-paragraph">My biggest cheerleaders whose relentless
+            dedication serves as my everyday blueprint for success.</p>
+        </div>
+
+        <div
+          class="bg-white rounded-[2.5rem] p-6 shadow-[0_15px_35px_rgba(0,0,0,0.02)] border border-gray-100 flex flex-col items-center text-center group hover:shadow-[0_25px_50px_-12px_rgba(229,57,53,0.1)] transition-all duration-300 hover:-translate-y-2"
+          data-aos="fade-up" data-aos-delay="300">
+          <div class="relative w-36 h-36 mb-6 group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-accent-orange/20 rounded-full scale-110 animate-pulse"
+              style="animation-delay: 1s"></div>
+            <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-md relative z-10">
+              <img src="p1 (3).jpg" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <h3 class="font-heading text-xl font-black text-foreground mb-1 leading-snug">Victoria, Marjus, Robin, Robijen
+          </h3>
+          <p class="text-primary font-bold text-xs tracking-widest uppercase mb-4 font-heading">Siblings</p>
+          <p class="text-foreground/60 text-sm leading-relaxed font-paragraph">A beautiful lifelong support network.
+            Gifts to the heart and absolute anchors to my spirit.</p>
+        </div>
+
+        <div
+          class="bg-white rounded-[2.5rem] p-6 shadow-[0_15px_35px_rgba(0,0,0,0.02)] border border-gray-100 flex flex-col items-center text-center group hover:shadow-[0_25px_50px_-12px_rgba(229,57,53,0.1)] transition-all duration-300 hover:-translate-y-2"
+          data-aos="fade-up" data-aos-delay="400">
+          <div class="relative w-36 h-36 mb-6 group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-accent-orange/20 rounded-full scale-110 animate-pulse"
+              style="animation-delay: 1.5s"></div>
+            <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-md relative z-10">
+              <img src="p1.jpg" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <h3 class="font-heading text-xl font-black text-foreground mb-1 leading-snug">Leon</h3>
+          <p class="text-primary font-bold text-xs tracking-widest uppercase mb-4 font-heading">My Cat</p>
+          <p class="text-foreground/60 text-sm leading-relaxed font-paragraph">My comforting little companion and an
+            absolute safe space after an exhausting day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="videos" class="w-full py-24 relative bg-white overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 relative">
+      <div class="text-center mb-20" data-aos="fade-up">
+        <h2 class="font-heading text-4xl md:text-6xl font-black text-primary mb-4 tracking-tight">Featured Videos</h2>
+        <div class="w-24 h-1.5 bg-accent-orange mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch" data-aos="fade-up">
+        <div
+          class="bg-background rounded-[2.5rem] p-6 border border-gray-100 flex flex-col group hover:bg-white hover:shadow-[0_30px_60px_-15px_rgba(229,57,53,0.1)] transition-all duration-300">
+          <div class="relative aspect-video rounded-3xl overflow-hidden mb-6 bg-black shadow-md">
+            <video controls preload="metadata" class="w-full h-full object-contain">
+              <source src="video1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h3 class="font-heading text-2xl font-black text-foreground mb-2 px-2">Family birthday greet for my mom in abroad</h3>
+        </div>
+
+        <div
+          class="bg-background rounded-[2.5rem] p-6 border border-gray-100 flex flex-col group hover:bg-white hover:shadow-[0_30px_60px_-15px_rgba(229,57,53,0.1)] transition-all duration-300">
+          <div class="relative aspect-video rounded-3xl overflow-hidden mb-6 bg-black shadow-md">
+            <video controls preload="metadata" class="w-full h-full object-contain">
+              <source src="video2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h3 class="font-heading text-2xl font-black text-foreground mb-2 px-2">Brother marjus and i when we were kids</h3>
+        </div>
+
+        <div
+          class="bg-background rounded-[2.5rem] p-6 border border-gray-100 flex flex-col group hover:bg-white hover:shadow-[0_30px_60px_-15px_rgba(229,57,53,0.1)] transition-all duration-300">
+          <div class="relative aspect-video rounded-3xl overflow-hidden mb-6 bg-black shadow-md">
+            <video controls preload="metadata" class="w-full h-full object-contain">
+              <source src="video3.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h3 class="font-heading text-2xl font-black text-foreground mb-2 px-2">My bf giving my lola and mom flowers</h3>
+        </div>
+
+        <div
+          class="bg-background rounded-[2.5rem] p-6 border border-gray-100 flex flex-col group hover:bg-white hover:shadow-[0_30px_60px_-15px_rgba(229,57,53,0.1)] transition-all duration-300">
+          <div class="relative aspect-video rounded-3xl overflow-hidden mb-6 bg-black shadow-md">
+            <video controls preload="metadata" class="w-full h-full object-contain">
+              <source src="video4.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h3 class="font-heading text-2xl font-black text-foreground mb-2 px-2">Brother marjus and i dancing</h3>
+        </div>
+
+        <div
+          class="bg-background rounded-[2.5rem] p-6 border border-gray-100 flex flex-col group hover:bg-white hover:shadow-[0_30px_60px_-15px_rgba(229,57,53,0.1)] transition-all duration-300">
+          <div class="relative aspect-video rounded-3xl overflow-hidden mb-6 bg-black shadow-md">
+            <video controls preload="metadata" class="w-full h-full object-contain">
+              <source src="video7.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h3 class="font-heading text-2xl font-black text-foreground mb-2 px-2">Liah and Leon</h3>
+        </div>
+
+        <div
+          class="bg-background rounded-[2.5rem] p-6 border border-gray-100 flex flex-col group hover:bg-white hover:shadow-[0_30px_60px_-15px_rgba(229,57,53,0.1)] transition-all duration-300">
+          <div class="relative aspect-video rounded-3xl overflow-hidden mb-6 bg-black shadow-md">
+            <video controls preload="metadata" class="w-full h-full object-contain">
+              <source src="video6.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h3 class="font-heading text-2xl font-black text-foreground mb-2 px-2">Family tiktok</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="interests" class="w-full py-24 relative bg-white overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 relative">
+      <div class="text-center mb-20" data-aos="fade-up">
+        <h2 class="font-heading text-4xl md:text-6xl font-black text-primary mb-4 tracking-tight">My Interests</h2>
+        <div class="w-24 h-1.5 bg-accent-orange mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch" data-aos="fade-up">
+        <div
+          class="bg-background rounded-[2rem] p-8 border border-gray-100 flex flex-col group hover:bg-white hover:shadow-[0_30px_60px_-15px_rgba(229,57,53,0.1)] hover:border-transparent transition-all duration-300 hover:-translate-y-1">
+          <div
+            class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="music"></i>
+          </div>
+          <h3 class="font-heading text-2xl font-black text-foreground mb-3">Dancing</h3>
+          <p class="text-foreground/60 text-sm leading-relaxed font-paragraph">Expressing raw creative energy and
+            emotional alignment across versatile dance styles from modern to rhythm tracks.</p>
+        </div>
+
+        <div
+          class="bg-background rounded-[2rem] p-8 border border-gray-100 flex flex-col group hover:bg-white hover:shadow-[0_30px_60px_-15px_rgba(229,57,53,0.1)] hover:border-transparent transition-all duration-300 hover:-translate-y-1">
+          <div
+            class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="gauge"></i>
+          </div>
+          <h3 class="font-heading text-2xl font-black text-foreground mb-3">Slalom Race</h3>
+          <p class="text-foreground/60 text-sm leading-relaxed font-paragraph">Navigating complex technical courses
+            under timed high-speed thresholds requiring intense focus and sharp situational reflexes.</p>
+        </div>
+
+        <div
+          class="bg-background rounded-[2rem] p-8 border border-gray-100 flex flex-col group hover:bg-white hover:shadow-[0_30px_60px_-15px_rgba(229,57,53,0.1)] hover:border-transparent transition-all duration-300 hover:-translate-y-1">
+          <div
+            class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="car"></i>
+          </div>
+          <h3 class="font-heading text-2xl font-black text-foreground mb-3">Project Cars</h3>
+          <p class="text-foreground/60 text-sm leading-relaxed font-paragraph">Immersing deeply within precision
+            mechanics and advanced racing environments to sharpen strategic micro-control skills.</p>
+        </div>
+
+        <div
+          class="bg-background rounded-[2rem] p-8 border border-gray-100 flex flex-col group hover:bg-white hover:shadow-[0_30px_60px_-15px_rgba(229,57,53,0.1)] hover:border-transparent transition-all duration-300 hover:-translate-y-1">
+          <div
+            class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="tv"></i>
+          </div>
+          <h3 class="font-heading text-2xl font-black text-foreground mb-3">Animes</h3>
+          <p class="text-foreground/60 text-sm leading-relaxed font-paragraph">Deconstructing cinematic storytelling
+            techniques, dynamic art aesthetics, and multi-layered global storylines.</p>
+        </div>
+
+        <div
+          class="bg-background rounded-[2rem] p-8 border border-gray-100 flex flex-col group hover:bg-white hover:shadow-[0_30px_60px_-15px_rgba(229,57,53,0.1)] hover:border-transparent transition-all duration-300 hover:-translate-y-1">
+          <div
+            class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="book-open"></i>
+          </div>
+          <h3 class="font-heading text-2xl font-black text-foreground mb-3">Books</h3>
+          <p class="text-foreground/60 text-sm leading-relaxed font-paragraph">Diving deep into written creative
+            universes and global literature to broaden horizons for structured personal worldview growth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="friends" class="w-full py-24 relative bg-secondary/30 overflow-hidden">
+    <div class="max-w-4xl mx-auto px-6 relative">
+      <div class="text-center mb-20" data-aos="fade-up">
+        <h2 class="font-heading text-4xl md:text-6xl font-black text-primary mb-4 tracking-tight">My Friends</h2>
+        <div class="w-24 h-1.5 bg-accent-orange mx-auto rounded-full"></div>
+      </div>
+
+      <div class="flex justify-center" data-aos="fade-up">
+        <div
+          class="bg-white rounded-[3rem] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col md:flex-row items-center gap-10 max-w-3xl w-full group transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(229,57,53,0.15)]">
+          <div
+            class="relative w-48 h-48 md:w-56 md:h-56 flex-shrink-0 flex justify-center items-center group-hover:rotate-2 transition-transform duration-500">
+            <div
+              class="absolute inset-0 bg-accent-orange/10 rounded-full scale-105 group-hover:scale-115 transition-transform duration-500 blur-sm">
+            </div>
+            <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl z-10">
+              <img src="p1 (4).jpg" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <div class="text-center md:text-left">
+            <h3 class="font-heading text-3xl font-black text-foreground mb-1">My Inner Circle</h3>
+            <p class="text-primary font-bold text-xs tracking-widest uppercase mb-5 font-heading">Janna Rodrigo & Jenny
+              Vitto</p>
+            <p class="text-foreground/70 text-base leading-relaxed font-paragraph">
+              The ones who make the high points radiant and structural challenges easy to handle. Deeply grateful for
+              authentic laughter, shared developmental milestones, and a core bond that continuously aligns stronger
+              daily.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements" class="w-full py-24 relative bg-white overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 relative">
+      <div class="text-center mb-20" data-aos="fade-up">
+        <h2 class="font-heading text-4xl md:text-6xl font-black text-primary mb-4 tracking-tight">Achievements</h2>
+        <div class="w-24 h-1.5 bg-accent-orange mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch" data-aos="fade-up">
+        <div
+          class="bg-background rounded-[2.5rem] p-8 border border-gray-100 flex flex-col justify-between group hover:bg-white hover:shadow-[0_30px_60px_-15px_rgba(229,57,53,0.1)] transition-all duration-300 hover:-translate-y-2">
+          <div>
+            <div
+              class="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center shadow-[0_8px_20px_rgba(229,57,53,0.3)] mb-8 group-hover:scale-110 transition-transform duration-300">
+              <i data-lucide="award" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-heading text-2xl font-black text-foreground mb-3 leading-snug">Academic Excellence</h3>
+            <p class="text-foreground/60 text-sm leading-relaxed font-paragraph">Consistently maintaining high grade
+              thresholds across semesters through deep dedication and analytical rigor.</p>
+          </div>
+        </div>
+
+        <div
+          class="bg-background rounded-[2.5rem] p-8 border border-gray-100 flex flex-col justify-between group hover:bg-white hover:shadow-[0_30px_60px_-15px_rgba(229,57,53,0.1)] transition-all duration-300 hover:-translate-y-2">
+          <div>
+            <div
+              class="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center shadow-[0_8px_20px_rgba(229,57,53,0.3)] mb-8 group-hover:scale-110 transition-transform duration-300">
+              <i data-lucide="map" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-heading text-2xl font-black text-foreground mb-3 leading-snug">Tour Design Simulation</h3>
+            <p class="text-foreground/60 text-sm leading-relaxed font-paragraph">Engineered highly complex domestic
+              travel operational frameworks and executed real-time mock professional guiding tours perfectly.</p>
+          </div>
+        </div>
+
+        <div
+          class="bg-background rounded-[2.5rem] p-8 border border-gray-100 flex flex-col justify-between group hover:bg-white hover:shadow-[0_30px_60px_-15px_rgba(229,57,53,0.1)] transition-all duration-300 hover:-translate-y-2">
+          <div>
+            <div
+              class="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center shadow-[0_8px_20px_rgba(229,57,53,0.3)] mb-8 group-hover:scale-110 transition-transform duration-300">
+              <i data-lucide="users" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-heading text-2xl font-black text-foreground mb-3 leading-snug">Association Committee</h3>
+            <p class="text-foreground/60 text-sm leading-relaxed font-paragraph">Secured key strategic leadership
+              positioning across active organizational committees within the university's BSTM operations network.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="advocacy" class="w-full py-24 relative bg-secondary/20 overflow-hidden">
+    <div class="max-w-5xl mx-auto px-6 relative">
+      <div class="text-center mb-20" data-aos="fade-up">
+        <h2 class="font-heading text-4xl md:text-6xl font-black text-primary mb-4 tracking-tight">Advocacy/Awareness for
+          Social Change
+        </h2>
+        <div class="w-24 h-1.5 bg-accent-orange mx-auto rounded-full"></div>
+      </div>
+
+      <div
+        class="bg-white rounded-[3rem] p-8 md:p-12 shadow-[0_15px_40px_rgba(0,0,0,0.02)] border border-gray-100 mb-12 transform hover:scale-[1.01] transition-transform duration-300"
+        data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-start md:items-center gap-8">
+          <div
+            class="w-16 h-16 bg-primary/10 rounded-2xl text-primary flex items-center justify-center flex-shrink-0 shadow-sm animate-bounce"
+            style="animation-duration: 3s">
+            <i data-lucide="shield-alert" class="w-8 h-8"></i>
+          </div>
+          <div>
+            <h3 class="font-heading text-3xl font-black text-foreground mb-3">Corruption in the Philippines
+            </h3>
+            <p class="text-foreground/70 text-base leading-relaxed font-paragraph">
+              Corruption is a major issue in the Philippines because some government funds meant for public services,
+              infrastructure, and disaster projects are allegedly misused or stolen. Recent controversies involving
+              flood-control and public projects increased public concern and distrust toward officials.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch mb-12" data-aos="fade-up" data-aos-delay="100">
+        <div
+          class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 flex flex-col hover:shadow-xl transition-all duration-300 group">
+          <h4 class="font-heading text-xl font-black text-primary mb-5 flex items-center gap-3">
+            <span
+              class="w-8 h-8 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:rotate-12 transition-transform"><i
+                data-lucide="alert-circle" class="w-4 h-4"></i></span> Core Issues
+          </h4>
+          <ul class="space-y-4 font-paragraph text-sm text-foreground/70 flex-grow">
+            <li class="flex items-start gap-3"><span
+                class="w-2 h-2 rounded-full bg-accent-orange mt-2 flex-shrink-0"></span> Misuse of government funds
+            </li>
+            <li class="flex items-start gap-3"><span
+                class="w-2 h-2 rounded-full bg-accent-orange mt-2 flex-shrink-0"></span> Ghost or unfinished projects
+            </li>
+            <li class="flex items-start gap-3"><span
+                class="w-2 h-2 rounded-full bg-accent-orange mt-2 flex-shrink-0"></span> Lack of accountability among
+              officials
+            </li>
+            <li class="flex items-start gap-3"><span
+                class="w-2 h-2 rounded-full bg-accent-orange mt-2 flex-shrink-0"></span> Public distrust in the
+              government
+            </li>
+          </ul>
+        </div>
+        <div
+          class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 flex flex-col hover:shadow-xl transition-all duration-300 group">
+          <h4 class="font-heading text-xl font-black text-primary mb-5 flex items-center gap-3">
+            <span
+              class="w-8 h-8 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:rotate-12 transition-transform"><i
+                data-lucide="help-circle" class="w-4 h-4"></i></span> Primary Causes
+          </h4>
+          <ul class="space-y-4 font-paragraph text-sm text-foreground/70 flex-grow">
+            <li class="flex items-start gap-3"><span
+                class="w-2 h-2 rounded-full bg-accent-orange mt-2 flex-shrink-0"></span> Weak law enforcement
+              execution</li>
+            <li class="flex items-start gap-3"><span
+                class="w-2 h-2 rounded-full bg-accent-orange mt-2 flex-shrink-0"></span> Lack of transparency
+            </li>
+            <li class="flex items-start gap-3"><span
+                class="w-2 h-2 rounded-full bg-accent-orange mt-2 flex-shrink-0"></span> Political favoritism
+            </li>
+            <li class="flex items-start gap-3"><span
+                class="w-2 h-2 rounded-full bg-accent-orange mt-2 flex-shrink-0"></span> Greed and abuse of power
+            </li>
+          </ul>
+        </div>
+        <div
+          class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 flex flex-col hover:shadow-xl transition-all duration-300 group">
+          <h4 class="font-heading text-xl font-black text-primary mb-5 flex items-center gap-3">
+            <span
+              class="w-8 h-8 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:rotate-12 transition-transform"><i
+                data-lucide="trending-down" class="w-4 h-4"></i></span> Direct Effects
+          </h4>
+          <ul class="space-y-4 font-paragraph text-sm text-foreground/70 flex-grow">
+            <li class="flex items-start gap-3"><span
+                class="w-2 h-2 rounded-full bg-accent-orange mt-2 flex-shrink-0"></span> Poor public services</li>
+            <li class="flex items-start gap-3"><span
+                class="w-2 h-2 rounded-full bg-accent-orange mt-2 flex-shrink-0"></span> Increased poverty</li>
+            <li class="flex items-start gap-3"><span
+                class="w-2 h-2 rounded-full bg-accent-orange mt-2 flex-shrink-0"></span> Worse disaster impacts
+            </li>
+            <li class="flex items-start gap-3"><span
+                class="w-2 h-2 rounded-full bg-accent-orange mt-2 flex-shrink-0"></span> Loss of public trust
+            </li>
+            <li class="flex items-start gap-3"><span
+                class="w-2 h-2 rounded-full bg-accent-orange mt-2 flex-shrink-0"></span> Slower economic growth
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch" data-aos="fade-up" data-aos-delay="200">
+        <div class="lg:col-span-8 bg-white rounded-[3rem] p-8 md:p-10 shadow-sm border border-gray-100">
+          <h4 class="font-heading text-2xl font-black text-foreground mb-8 flex items-center gap-3">
+            <i data-lucide="git-branch" class="text-primary"></i> Process of Change
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="p-5 bg-background rounded-2xl hover:bg-secondary/40 transition-colors duration-300">
+              <span class="font-heading font-black text-primary text-lg">1. Awareness</span>
+              <p class="text-xs text-foreground/60 font-paragraph mt-2 leading-relaxed">Educating people through social
+                media, news, and schools.</p>
+            </div>
+            <div class="p-5 bg-background rounded-2xl hover:bg-secondary/40 transition-colors duration-300">
+              <span class="font-heading font-black text-primary text-lg">2. Public Participation</span>
+              <p class="text-xs text-foreground/60 font-paragraph mt-2 leading-relaxed">Encouraging citizens to vote
+                wisely, speak up, and report corruption.</p>
+            </div>
+            <div class="p-5 bg-background rounded-2xl hover:bg-secondary/40 transition-colors duration-300">
+              <span class="font-heading font-black text-primary text-lg">3. Government Reform</span>
+              <p class="text-xs text-foreground/60 font-paragraph mt-2 leading-relaxed">Strengthening anti-corruption
+                laws and transparency.</p>
+            </div>
+            <div class="p-5 bg-background rounded-2xl hover:bg-secondary/40 transition-colors duration-300">
+              <span class="font-heading font-black text-primary text-lg">4. Cultural Change</span>
+              <p class="text-xs text-foreground/60 font-paragraph mt-2 leading-relaxed">Promoting honesty,
+                accountability, and responsible citizenship.</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="lg:col-span-4 bg-primary text-white rounded-[3rem] p-8 flex flex-col justify-between shadow-[0_20px_40px_rgba(229,57,53,0.25)] relative overflow-hidden group">
+          <div
+            class="absolute -right-10 -bottom-10 w-44 h-44 bg-white/5 rounded-full group-hover:scale-120 transition-transform duration-500">
+          </div>
+          <div>
+            <h4 class="font-heading text-2xl font-black mb-4 flex items-center gap-3">
+              <i data-lucide="check-circle" class="text-accent-yellow"></i> Conclusion
+            </h4>
+            <p class="font-paragraph text-sm leading-relaxed opacity-90">
+              Corruption affects the country’s progress and the lives of Filipinos. Through awareness, participation,
+              and stronger accountability, social change and a better Philippines are possible.
+            </p>
+          </div>
+          <div class="mt-8 pt-6 border-t border-white/10 text-left">
+            <span class="font-heading font-bold text-accent-yellow text-xs tracking-widest uppercase block">Social
+              Change Paradigm</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-foreground text-white py-12 border-t border-gray-800">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="text-center md:text-left">
+        <span class="font-heading font-black text-2xl tracking-widest block mb-2 text-white">MR<span
+            class="text-primary">.</span></span>
+        <p class="font-paragraph text-xs text-gray-400">© <span id="year"></span> Maria Robel | Student Portfolio</p>
+      </div>
+
+      <div class="flex gap-4">
+        <a href="mailto:robelrobyn@gmail.com"
+          class="p-3.5 bg-white/5 text-gray-300 rounded-full hover:bg-primary hover:text-white transition-all duration-300 hover:-translate-y-1"
+          aria-label="Email Address Channel">
+          <i data-lucide="mail" class="w-5 h-5"></i>
+        </a>
+        <a href="tel:09260456760"
+          class="p-3.5 bg-white/5 text-gray-300 rounded-full hover:bg-primary hover:text-white transition-all duration-300 hover:-translate-y-1"
+          aria-label="Direct Voice Interface Link">
+          <i data-lucide="phone" class="w-5 h-5"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    AOS.init({ duration: 900, once: true, offset: 60 });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
